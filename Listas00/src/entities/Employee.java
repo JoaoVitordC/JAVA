@@ -34,8 +34,15 @@ public class Employee{
     public void setSalary(Double salary) {
         Salary = salary;
     }
-    public void increaseSalary(double percentege){
+    public void increaseSalary(double percentege)
+    {
         Salary *= Salary * percentege / 100.0;
+
+
     }
 
+
+public  String toString(){
+  return Id + ", " + Name + ", " + String.format("%.2f", Salary);
+}
 }

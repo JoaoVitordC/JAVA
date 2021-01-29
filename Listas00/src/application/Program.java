@@ -36,10 +36,24 @@ public class Program{
             }
         System.out.println("Enter the Employee id that will increase : ");
             int Idslry = teclado.nextInt();
+            Integer position = hasId(list, Idslry);
+            if(position == null) {
+                System.out.println("This Id dosen't exist");
+            }
+            else {
+                System.out.println("Enter the percentege :");
+                double percent = teclado.nextDouble();
+                list.get(position).increaseSalary(percent);
+            }
+                System.out.println();
+                System.out.println("Lit of employees: ");
+                for(Employee emp: list ){
+                    System.out.println(emp);
+                }
 
         teclado.close();
     }
-    public Integer hasId(List<Employee> list, int id){
+    public static Integer hasId(List<Employee> list, int id){
         for ( int i = 0; i < list.size(); i++){
             if(list.get(i).getId() == id ) {
                 return i;
