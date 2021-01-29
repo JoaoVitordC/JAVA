@@ -19,9 +19,9 @@ public class Program{
             System.out.println("How many employees will be registered ?");
             int N = teclado.nextInt();
 
-            for(int i=0; i< N; i++)
+            for(int i=0; i< N; i++) {
 
-                System.out.println("Employee " + (i + 1) +" : ");
+                System.out.println("Employee " + (i + 1) + " : ");
                 System.out.println("Id : ");
                 Integer Id = teclado.nextInt();
                 System.out.println("Name :");
@@ -30,8 +30,21 @@ public class Program{
                 System.out.println("Salary :");
                 Double Salary = teclado.nextDouble();
 
+
                 Employee emp = new Employee(Id, Name, Salary);
                 list.add(emp);
+            }
+        System.out.println("Enter the Employee id that will increase : ");
+            int Idslry = teclado.nextInt();
+
         teclado.close();
+    }
+    public Integer hasId(List<Employee> list, int id){
+        for ( int i = 0; i < list.size(); i++){
+            if(list.get(i).getId() == id ) {
+                return i;
+            }
+        }
+        return null;
     }
 }
