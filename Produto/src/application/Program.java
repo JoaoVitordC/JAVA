@@ -11,13 +11,27 @@ public class Program {
         Scanner sc =new Scanner(System.in);
         Products product = new Products();
         System.out.println("Enter the product data: ");
-        System.out.println("Name");
+        System.out.println("Name: ");
         product.name = sc.nextLine();
         System.out.println("Enter the price: ");
         product.price =sc.nextDouble();
-        System.out.println("Enter thee quantity :");
+        System.out.println("Quantity in the stock:");
         product.quantity=sc.nextInt();
+        System.out.println();
+        System.out.println("product data: " + product);
+
+        System.out.println("Enter the number of products to be added in stock");
+        int quantity = sc.nextInt();
+        product.AddProducts(quantity);
+        System.out.println();
+        System.out.println("Updated data: " + product);
+
+        System.out.println("Enter the number of products to be removed in stock");
+        quantity = sc.nextInt();
+        product.RemoveProducts(quantity);
+        System.out.println("Updated data: " + product);
         sc.close();
+
 
 
     }
